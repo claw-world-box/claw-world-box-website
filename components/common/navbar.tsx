@@ -80,7 +80,7 @@ export function Navbar() {
                     }`}
                   >
                     <span>{t(item.labelKey)}</span>
-                    <span className="text-xs uppercase">{item.value}</span>
+                    <span className="text-[12px] uppercase">{item.value}</span>
                   </button>
                 )
               })}

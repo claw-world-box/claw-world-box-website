@@ -60,11 +60,11 @@ export function Hero() {
               />
 
               <div className="mx-auto w-[310px] text-center md:w-auto">
-                <p className="mt-5 text-xs leading-5 text-[#05C740] sm:mt-6.5 sm:text-sm sm:leading-7 lg:text-base">
+                <p className="mt-5 text-[12px] leading-5 text-[#05C740] sm:mt-6.5 sm:text-sm sm:leading-7 lg:text-base">
                   {t("tagline1")}
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-[#05C740] sm:text-sm sm:leading-4 lg:text-base">
+                <p className="mt-1 text-[12px] leading-5 text-[#05C740] sm:text-sm sm:leading-4 lg:text-base">
                   {t("tagline2")}
                 </p>
               </div>
@@ -81,7 +81,7 @@ export function Hero() {
                     width={22}
                     height={22}
                   />
-                  <p className="text-[9px]">{t("linkAgent")}</p>
+                  <p className="text-[12px]">{t("linkAgent")}</p>
                 </Button>
               </div>
             </div>

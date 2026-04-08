@@ -44,7 +44,7 @@ export default async function DocsPage({ params }: Props) {
             <span className="mx-2 text-white/30">/</span>
             <span className="text-white/70">{t("breadcrumbCurrent")}</span>
           </nav>
-          <p className="mb-2 text-xs font-medium tracking-[0.2em] text-[#05C740]/70 uppercase">
+          <p className="mb-2 text-[12px] font-medium tracking-[0.2em] text-[#05C740]/70 uppercase">
             {t("kicker")}
           </p>
           <GuideMarkdown markdown={markdown} />

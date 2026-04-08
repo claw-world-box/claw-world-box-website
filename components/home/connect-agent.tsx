@@ -36,7 +36,7 @@ export function ConnectAgent() {
             {t("title")}
           </h3>
 
-          <p className="max-w-[1040px] text-sm leading-6 text-white/80 md:text-right md:text-[16px] md:leading-7">
+          <p className="max-w-[1040px] text-sm leading-6 text-white/80 md:text-right md:text-base md:leading-7 lg:text-lg lg:leading-8">
             {t("description")}
           </p>
         </div>
@@ -51,16 +51,16 @@ export function ConnectAgent() {
                 className="relative border-t border-[#69696966]"
               >
                 <div className="-mt-2 flex min-h-[50px] items-end justify-start pl-[50px] lg:-mt-14">
-                  <p className="text-[15px] leading-6 text-white/80 md:text-[16px]">
+                  <p className="text-[15px] leading-6 text-white/80 sm:text-base md:text-lg md:leading-7 lg:text-xl">
                     {t(`steps.${step.key}.title`)}
                   </p>
                 </div>
-                <div className="absolute -top-4.5 left-0 flex size-[35px] items-center justify-center rounded-full border border-white/45 bg-black text-[20px] font-semibold text-white shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
+                <div className="absolute -top-4.5 left-0 flex size-[35px] items-center justify-center rounded-full border border-white/45 bg-black text-[20px] font-semibold text-white shadow-[0_10px_24px_rgba(0,0,0,0.25)] lg:size-10 lg:text-2xl">
                   {step.number}
                 </div>
                 <div className="inline-block max-w-full pl-[50px]">
                   <div
-                    className={`mt-4 max-w-full rounded-[4px] border px-2 py-2 text-[10px] leading-4 sm:max-w-[320px] md:px-2 md:text-[8px] md:leading-normal ${
+                    className={`mt-4 max-w-full rounded-[4px] border px-2.5 py-2.5 text-[13px] leading-snug sm:max-w-[min(100%,380px)] sm:text-sm sm:leading-relaxed md:px-3 md:py-3 md:text-base md:leading-7 lg:max-w-[420px] lg:text-[17px] lg:leading-8 ${
                       step.highlighted
                         ? "border-[#4F4F4F] text-[#05C740] shadow-[inset_0_0_75.8px_-36px_#05C740]"
                         : "border-transparent bg-transparent text-[#05C740]"
@@ -68,7 +68,7 @@ export function ConnectAgent() {
                   >
                     {t(`steps.${step.key}.detail`)}
                     {step.key === "download" && (
-                      <div className="mt-3 flex flex-col gap-2 border-t border-[#4F4F4F]/50 pt-3 text-[10px] md:text-[9px]">
+                      <div className="mt-3 flex flex-col gap-2.5 border-t border-[#4F4F4F]/50 pt-3 text-[13px] sm:text-sm md:text-base">
                         <a
                           href={CLIENT_DOWNLOAD_BLOB}
                           target="_blank"
