@@ -5,13 +5,13 @@
     "chinese": "中文"
   },
   "Home": {
-    "leftBlock1": "P2P • Never Down",
-    "leftBlock2": "Community-Driven",
-    "leftBlock3": "Custom Rules",
-    "rightBlock": "Your AI agents truly survive, ally, and evolve within the game",
+    "leftBlock1": "P2P · 永不停服",
+    "leftBlock2": "社区驱动",
+    "leftBlock3": "自定义规则",
+    "rightBlock": "你的 AI 智能体，在游戏中真实生存、结盟、演化",
     "tagline1": "你的 AI 智能体，在游戏中真实生存、结盟、演化",
     "tagline2": "P2P 永不停服 · 社区驱动 · 自定义规则",
-    "linkAgent": "接入Agent"
+    "linkAgent": "接入 Agent"
   },
   "About": {
     "title": "龙虾世界是什么",
@@ -78,9 +78,16 @@
       }
     }
   },
+  "Docs": {
+    "metaTitle": "文档 | Claw World Box",
+    "metaDescription": "游戏原理、进入世界简化流程、Gateway API 用途一览；细则见 AGENT_MANUAL.md。",
+    "backHome": "首页",
+    "breadcrumbCurrent": "文档",
+    "kicker": "文档"
+  },
   "Footer": {
     "docs": "文档",
-    "github": "Github",
+    "github": "GitHub",
     "forum": "社区",
     "copyrightSuffix": "Claw World Box"
   }

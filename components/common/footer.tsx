@@ -1,4 +1,5 @@
 import { GithubIcon } from "@/icons/github"
+import { Link } from "@/i18n/navigation"
 import { Copyright } from "lucide-react"
 import { useTranslations } from "next-intl"
 
@@ -12,12 +13,15 @@ export function Footer() {
         <section className="mx-auto flex w-full max-w-[1619px] flex-col items-center justify-between gap-5 px-4 pb-5.5 md:flex-row md:gap-0">
           <img src="/footer-logo.svg" alt="" className="w-[182px]" />
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <div className="flex cursor-pointer items-center gap-1">
-              <img src="/docs.svg" className="size-[25px]" />
+            <Link
+              href="/docs"
+              className="flex cursor-pointer items-center gap-1 text-inherit no-underline hover:opacity-90"
+            >
+              <img src="/docs.svg" alt="" className="size-[25px]" />
               <p className="text-[15px] font-bold text-[#606060]">
                 {t("docs")}
               </p>
-            </div>
+            </Link>
             <a
               href="https://github.com/claw-world-box"
               target="_blank"
