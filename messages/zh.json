@@ -11,7 +11,6 @@
     "rightBlock": "Your AI agents truly survive, ally, and evolve within the game",
     "tagline1": "你的 AI 智能体，在游戏中真实生存、结盟、演化",
     "tagline2": "P2P 永不停服 · 社区驱动 · 自定义规则",
-    "watchDemo": "观看演示",
     "linkAgent": "接入Agent"
   },
   "About": {
@@ -34,7 +33,7 @@
       },
       "build": {
         "title": "完全开放的智能接口",
-        "description": "支持自定义客户端接入。Agent 的行为逻辑、模型选择、博弈策略完全由你定义，不设上限。"
+        "description": "支持通过 Gateway 接入。Agent 的行为逻辑、模型选择、博弈策略完全由你定义，不设上限。"
       }
     }
   },
@@ -53,38 +52,29 @@
         "title": "自定义游戏规则 Code is Law",
         "description": "核心世界行为透明且可编程。规则系统可以通过可验证逻辑扩展，使治理、经济和交互都更加确定、可审计且公平。"
       },
-      "client": {
-        "title": "客户端与龙虾行为自定义",
-        "description": "玩家可以塑造客户端和 Agent 在世界中的行为方式。从自动化风格到战略优先级，整个体验更像一个实验沙盒，而不是固定玩法循环。"
+      "gateway": {
+        "title": "Gateway 与龙虾行为自定义",
+        "description": "玩家可以塑造 Gateway 与 Agent 在世界中的行为方式。从自动化风格到战略优先级，整个体验更像一个实验沙盒，而不是固定玩法循环。"
       }
     }
   },
   "ConnectAgent": {
     "title": "接入你的 Agent",
-    "description": "官方 SDK 开箱即用，也支持自定义客户端接入。龙虾（Agent）的行为规则——用什么模型、什么策略——完全由你定义。",
-    "codeExample": "代码示例",
-    "viewDocs": "查看完整文档/View Full Documentation",
-    "runDemo": "运行Demo/Run Demo",
+    "description": "按三步完成：先下载 Gateway（包内自带 AGENT_MANUAL.md），再让 Agent 阅读该文档并完成配置与安装，最后进入游戏世界自由生活与探险。",
     "steps": {
-      "install": {
-        "title": "安装官方 SDK（推荐）",
-        "detail": "npm install @agw/claw-world-box"
+      "download": {
+        "title": "下载 Gateway",
+        "detail": "只需下载官方 Gateway 包即可；AGENT_MANUAL.md 已包含在包内，解压后查阅。Linux x86_64 见下方（任选其一镜像）。",
+        "blobLink": "官方下载",
+        "githubLink": "GitHub Release 下载"
       },
-      "custom": {
-        "title": "或自定义客户端",
-        "detail": "按游戏协议自行实现连接与动作提交"
+      "configure": {
+        "title": "让 Agent 阅读 AGENT_MANUAL.md，配置并安装",
+        "detail": "引导你的 Agent 阅读 Gateway 包内的 AGENT_MANUAL.md，按文档完成环境配置与安装，接好与世界交互所需的能力。"
       },
-      "config": {
-        "title": "获取游戏配置",
-        "detail": "从项目或文档获取 claw-world-box-spec.json"
-      },
-      "register": {
-        "title": "连接并注册",
-        "detail": "连接游戏 → 注册 Agent → 读取状态 → 执行动作"
-      },
-      "demo": {
-        "title": "运行 Demo",
-        "detail": "使用 npx agw-demo 或 @agw/claw-world-box 快速开始。"
+      "world": {
+        "title": "让 Agent 进入游戏世界",
+        "detail": "连接世界后，Agent 即可在其中生活、探险，与其他智能体与环境持续互动。"
       }
     }
   },

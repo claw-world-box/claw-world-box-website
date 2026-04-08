@@ -69,21 +69,7 @@ export function Hero() {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:mt-10.75 sm:flex-row">
-                <Button
-                  type="button"
-                  onClick={() => scrollToSection("media-section")}
-                  className="h-10 w-full cursor-pointer rounded-[5px] bg-[#05C740] hover:bg-[#05c73feb] sm:w-auto md:h-[36px] md:w-[138px]"
-                >
-                  <Image
-                    src="/play.svg"
-                    alt={t("watchDemo")}
-                    width={22}
-                    height={22}
-                  />
-                  <p className="text-[9px]">{t("watchDemo")}</p>
-                </Button>
-
+              <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:mt-10.75 sm:flex-row sm:justify-center">
                 <Button
                   type="button"
                   onClick={() => scrollToSection("connect-agent-section")}

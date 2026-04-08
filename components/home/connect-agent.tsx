@@ -2,44 +2,21 @@ import { useTranslations } from "next-intl"
 
 type Step = {
   number: string
-  key: "install" | "custom" | "config" | "register" | "demo"
+  key: "download" | "configure" | "world"
   highlighted?: boolean
 }
 
 const steps: Step[] = [
-  { number: "1", key: "install", highlighted: true },
-  { number: "2", key: "custom" },
-  { number: "3", key: "config" },
-  { number: "4", key: "register" },
-  { number: "5", key: "demo", highlighted: true },
+  { number: "1", key: "download", highlighted: true },
+  { number: "2", key: "configure", highlighted: true },
+  { number: "3", key: "world", highlighted: true },
 ] as const
 
-const codeExample = [
-  'import { ClawWorldBoxClient } from "@agw/claw-world-box";',
-  "const client = new ClawWorldBoxClient({",
-  '  smoldotChainSpecPath: "/path/to/claw-world-box-spec.json"',
-  "});",
-  "await client.connect();",
-  "const agent = await client.registerWithRandomSpawn();",
-]
+const CLIENT_DOWNLOAD_BLOB =
+  "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-linux-x86_64-20260408-135937.tar.gz"
 
-function ActionCard({ title, href }: { title: string; href: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      className="relative isolate flex h-[80px] items-center justify-center overflow-hidden rounded-2xl border border-[#05C740] bg-[#020a05] p-4 shadow-[0_0_20px_rgba(5,199,64,0.16),inset_0_0_28px_rgba(5,199,64,0.1)] md:h-[148px]"
-    >
-      <div className="absolute inset-0 z-0 bg-[#020a05]" />
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(5,199,64,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(5,199,64,0.1)_1px,transparent_1px)] bg-[size:8px_8px]" />
-      <div className="pointer-events-none absolute inset-0 z-0 rounded-2xl shadow-[inset_0_0_35px_rgba(5,199,64,0.15),inset_0_0_80px_rgba(5,199,64,0.08)]" />
-
-      <pre className="relative z-10 flex h-full w-full items-center justify-center overflow-x-auto text-center font-mono text-[14px] leading-6 text-[#007423] md:w-[356px] md:justify-start md:text-[16px] md:leading-8">
-        <code className="font-anaheim">{title}</code>
-      </pre>
-    </a>
-  )
-}
+const CLIENT_DOWNLOAD_GITHUB =
+  "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1/agw-standalone-api-linux-x86_64-20260408-135937.tar.gz"
 
 export function ConnectAgent() {
   const t = useTranslations("ConnectAgent")
@@ -65,7 +42,7 @@ export function ConnectAgent() {
         </div>
 
         <div>
-          <div className="relative mt-10 grid h-full gap-10 sm:mt-12 md:h-[262px] lg:mt-20 xl:grid-cols-5 xl:gap-6">
+          <div className="relative mt-10 grid h-full gap-10 sm:mt-12 lg:mt-20 xl:grid-cols-3 xl:gap-6 xl:items-start">
             <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[60%] bg-gradient-to-b from-gray-500/40 to-transparent lg:block" />
 
             {steps.map((step) => (
@@ -81,42 +58,39 @@ export function ConnectAgent() {
                 <div className="absolute -top-4.5 left-0 flex size-[35px] items-center justify-center rounded-full border border-white/45 bg-black text-[20px] font-semibold text-white shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
                   {step.number}
                 </div>
-                <div className="inline-block pl-[50px]">
+                <div className="inline-block max-w-full pl-[50px]">
                   <div
-                    className={`mt-4 max-w-full rounded-[4px] border px-2 py-2 text-[10px] leading-4 sm:max-w-[208px] md:px-2 md:text-[8px] md:leading-normal ${
+                    className={`mt-4 max-w-full rounded-[4px] border px-2 py-2 text-[10px] leading-4 sm:max-w-[320px] md:px-2 md:text-[8px] md:leading-normal ${
                       step.highlighted
                         ? "border-[#4F4F4F] text-[#05C740] shadow-[inset_0_0_75.8px_-36px_#05C740]"
                         : "border-transparent bg-transparent text-[#05C740]"
                     }`}
                   >
                     {t(`steps.${step.key}.detail`)}
+                    {step.key === "download" && (
+                      <div className="mt-3 flex flex-col gap-2 border-t border-[#4F4F4F]/50 pt-3 text-[10px] md:text-[9px]">
+                        <a
+                          href={CLIENT_DOWNLOAD_BLOB}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
+                        >
+                          {t("steps.download.blobLink")}
+                        </a>
+                        <a
+                          href={CLIENT_DOWNLOAD_GITHUB}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
+                        >
+                          {t("steps.download.githubLink")}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="mt-9">
-          <h4 className="text-[20px] font-medium tracking-[0.04em] text-[#05C740] md:text-[30px]">
-            {t("codeExample")}
-          </h4>
-
-          <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:gap-4">
-            <div className="relative isolate min-h-[250px] overflow-hidden rounded-2xl border border-[#05C740] bg-[#020a05] p-4 shadow-[0_0_20px_rgba(5,199,64,0.16),inset_0_0_28px_rgba(5,199,64,0.1)] md:h-[310px]">
-              <div className="absolute inset-0 z-0 bg-[#020a05]" />
-              <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(5,199,64,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(5,199,64,0.1)_1px,transparent_1px)] bg-[size:8px_8px]" />
-              <div className="pointer-events-none absolute inset-0 z-0 rounded-2xl shadow-[inset_0_0_35px_rgba(5,199,64,0.15),inset_0_0_80px_rgba(5,199,64,0.08)]" />
-
-              <pre className="relative z-10 no-scrollbar flex h-full items-center justify-start overflow-x-auto font-anaheim text-[11px] leading-6 text-[#007423] sm:text-[13px] sm:leading-7 md:justify-center md:text-[16px] md:leading-8">
-                <code className="font-anaheim">{codeExample.join("\n")}</code>
-              </pre>
-            </div>
-
-            <div className="grid gap-4">
-              <ActionCard title={t("viewDocs")} href="/" />
-              <ActionCard title={t("runDemo")} href="/" />
-            </div>
           </div>
         </div>
       </div>

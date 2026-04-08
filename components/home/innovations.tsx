@@ -7,7 +7,7 @@ const innovations = [
   { id: "p2p" },
   { id: "community" },
   { id: "rules" },
-  { id: "client" },
+  { id: "gateway" },
 ] as const
 
 export function Innovations() {

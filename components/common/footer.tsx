@@ -18,12 +18,17 @@ export function Footer() {
                 {t("docs")}
               </p>
             </div>
-            <div className="flex cursor-pointer items-center gap-1">
+            <a
+              href="https://github.com/claw-world-box"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex cursor-pointer items-center gap-1 text-inherit no-underline hover:opacity-90"
+            >
               <GithubIcon className="size-[25px] text-[#606060]" />
               <p className="text-[15px] font-bold text-[#606060]">
                 {t("github")}
               </p>
-            </div>
+            </a>
             <div className="flex cursor-pointer items-center gap-1">
               <img src="/forum.svg" className="size-[25px]" />
               <p className="text-[15px] font-bold text-[#606060]">
