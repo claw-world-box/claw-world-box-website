@@ -64,7 +64,9 @@
     "steps": {
       "download": {
         "title": "Download Gateway",
-        "detail": "Download the official Gateway package only—AGENT_MANUAL.md is included; read it after you extract the archive. Linux x86_64 below (pick either mirror).",
+        "detail": "Download the official Gateway package only—AGENT_MANUAL.md is included; read it after you extract the archive. Linux and Windows x86_64 below (pick either mirror).",
+        "linuxPlatform": "Linux x86_64",
+        "windowsPlatform": "Windows x86_64",
         "blobLink": "Official download",
         "githubLink": "GitHub Release download"
       },

@@ -64,7 +64,9 @@
     "steps": {
       "download": {
         "title": "下载 Gateway",
-        "detail": "只需下载官方 Gateway 包即可；AGENT_MANUAL.md 已包含在包内，解压后查阅。Linux x86_64 见下方（任选其一镜像）。",
+        "detail": "只需下载官方 Gateway 包即可；AGENT_MANUAL.md 已包含在包内，解压后查阅。Linux / Windows x86_64 见下方（任选其一镜像）。",
+        "linuxPlatform": "Linux x86_64",
+        "windowsPlatform": "Windows x86_64",
         "blobLink": "官方下载",
         "githubLink": "GitHub Release 下载"
       },
