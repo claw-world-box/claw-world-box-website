@@ -12,17 +12,26 @@ const steps: Step[] = [
   { number: "3", key: "world", highlighted: true },
 ] as const
 
-const CLIENT_DOWNLOAD_LINUX_BLOB =
-  "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-linux-x86_64-20260408-135937.tar.gz"
-
-const CLIENT_DOWNLOAD_LINUX_GITHUB =
-  "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1/agw-standalone-api-linux-x86_64-20260408-135937.tar.gz"
-
-const CLIENT_DOWNLOAD_WINDOWS_BLOB =
-  "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-windows-x86_64-20260409-211154.zip"
-
-const CLIENT_DOWNLOAD_WINDOWS_GITHUB =
-  "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1.1/agw-standalone-api-windows-x86_64-20260409-211154.zip"
+const GATEWAY_DOWNLOADS = [
+  {
+    platformKey: "linuxPlatform" as const,
+    blob: "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-linux-x86_64-v0.1.0-rc2.tar.gz",
+    github:
+      "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1.2/agw-standalone-api-linux-x86_64-v0.1.0-rc2.tar.gz",
+  },
+  {
+    platformKey: "macosPlatform" as const,
+    blob: "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-macos-arm64-v0.1.0-rc2.tar.gz",
+    github:
+      "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1.2/agw-standalone-api-macos-arm64-v0.1.0-rc2.tar.gz",
+  },
+  {
+    platformKey: "windowsPlatform" as const,
+    blob: "https://doodjgs0wea2zx0o.public.blob.vercel-storage.com/agw-standalone-api-windows-x86_64-v0.1.0-rc2.zip",
+    github:
+      "https://github.com/claw-world-box/claw-world-box-website/releases/download/v0.1.2/agw-standalone-api-windows-x86_64-v0.1.0-rc2.zip",
+  },
+] as const
 
 export function ConnectAgent() {
   const t = useTranslations("ConnectAgent")
@@ -75,52 +84,31 @@ export function ConnectAgent() {
                     {t(`steps.${step.key}.detail`)}
                     {step.key === "download" && (
                       <div className="mt-3 flex flex-col gap-4 border-t border-[#4F4F4F]/50 pt-3 text-[13px] sm:text-sm md:text-base">
-                        <div>
-                          <p className="mb-2 text-white/90">
-                            {t("steps.download.linuxPlatform")}
-                          </p>
-                          <div className="flex flex-col gap-2.5">
-                            <a
-                              href={CLIENT_DOWNLOAD_LINUX_BLOB}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
-                            >
-                              {t("steps.download.blobLink")}
-                            </a>
-                            <a
-                              href={CLIENT_DOWNLOAD_LINUX_GITHUB}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
-                            >
-                              {t("steps.download.githubLink")}
-                            </a>
+                        {GATEWAY_DOWNLOADS.map(({ platformKey, blob, github }) => (
+                          <div key={platformKey}>
+                            <p className="mb-2 text-white/90">
+                              {t(`steps.download.${platformKey}`)}
+                            </p>
+                            <div className="flex flex-col gap-2.5">
+                              <a
+                                href={blob}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
+                              >
+                                {t("steps.download.blobLink")}
+                              </a>
+                              <a
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
+                              >
+                                {t("steps.download.githubLink")}
+                              </a>
+                            </div>
                           </div>
-                        </div>
-                        <div>
-                          <p className="mb-2 text-white/90">
-                            {t("steps.download.windowsPlatform")}
-                          </p>
-                          <div className="flex flex-col gap-2.5">
-                            <a
-                              href={CLIENT_DOWNLOAD_WINDOWS_BLOB}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
-                            >
-                              {t("steps.download.blobLink")}
-                            </a>
-                            <a
-                              href={CLIENT_DOWNLOAD_WINDOWS_GITHUB}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="font-medium text-[#05C740] underline decoration-[#05C740]/50 underline-offset-2 transition-colors hover:text-[#3ae86f] hover:decoration-[#3ae86f]"
-                            >
-                              {t("steps.download.githubLink")}
-                            </a>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     )}
                   </div>
