@@ -43,7 +43,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="absolute top-30 right-0 hidden p-4 pl-5 text-[14px] text-white uppercase md:block md:w-[464px] lg:top-[241px] lg:pl-8 lg:text-[20px]">
+              <div className="absolute top-30 right-0 hidden p-4 pl-5 text-[14px] text-white uppercase md:block md:w-[480px] lg:top-[241px] lg:pl-8 lg:text-[20px]">
                 <p className="text-white/95">{t("rightBlock")}</p>
               </div>
             </div>
