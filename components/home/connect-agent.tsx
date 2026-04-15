@@ -1,3 +1,4 @@
+import { ShowcaseVideo } from "@/components/home/showcase-video"
 import { useTranslations } from "next-intl"
 
 type Step = {
@@ -39,9 +40,9 @@ export function ConnectAgent() {
   return (
     <section
       id="connect-agent-section"
-      className="mt-10 scroll-mt-24 overflow-hidden border-b border-[#007423]/30 py-10 text-white md:pt-[148px] md:pb-[133px]"
+      className="relative mt-10 scroll-mt-24 overflow-hidden border-b border-[#007423]/30 py-10 text-white md:pt-[148px] md:pb-[133px]"
     >
-      <div className="absolute inset-0 opacity-20">
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-20">
         <div className="h-full w-full bg-[linear-gradient(to_right,rgba(5,199,64,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(5,199,64,0.08)_1px,transparent_1px)] bg-[size:18px_18px]" />
       </div>
 
@@ -55,6 +56,8 @@ export function ConnectAgent() {
             {t("description")}
           </p>
         </div>
+
+        <ShowcaseVideo className="mt-8 mb-10 md:mt-10 md:mb-14" />
 
         <div>
           <div className="relative mt-10 grid h-full gap-10 sm:mt-12 lg:mt-20 xl:grid-cols-3 xl:gap-6 xl:items-start">

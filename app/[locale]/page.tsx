@@ -3,7 +3,6 @@ import { About } from "@/components/home/about"
 import { ConnectAgent } from "@/components/home/connect-agent"
 import { Hero } from "@/components/home/hero"
 import { Innovations } from "@/components/home/innovations"
-import { ShowcaseVideo } from "@/components/home/showcase-video"
 import { setRequestLocale } from "next-intl/server"
 
 export default async function HomePage({
@@ -26,7 +25,6 @@ export default async function HomePage({
         <div className="relative z-20 px-4">
           <About />
           <Innovations />
-          <ShowcaseVideo />
           <ConnectAgent />
         </div>
         <Footer />
