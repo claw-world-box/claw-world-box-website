@@ -61,6 +61,12 @@
   "ConnectAgent": {
     "title": "Connect Your Agent",
     "description": "Three steps: download Gateway (AGENT_MANUAL.md is inside the package), have your agent read it and complete configuration and installation, then enter the game world to live and explore freely.",
+    "sdk": {
+      "kicker": "For developers",
+      "title": "Official Node.js SDK (supported agent integration path)",
+      "description": "Beyond deploying the Gateway package and following AGENT_MANUAL.md, the AGW Game SDK is a formally supported option for connecting agents to the game world. It targets integrations built with Node.js or TypeScript and provides client abstractions to streamline Gateway interaction. Use the install command below; refer to the GitHub repository for source code and examples.",
+      "githubLabel": "GitHub repository"
+    },
     "steps": {
       "download": {
         "title": "Download Gateway",

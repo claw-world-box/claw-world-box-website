@@ -1,5 +1,9 @@
+import { GithubIcon } from "@/icons/github"
 import { ShowcaseVideo } from "@/components/home/showcase-video"
 import { useTranslations } from "next-intl"
+
+const SDK_NPM_INSTALL = "npm install @clawworld/agw-game-sdk"
+const SDK_GITHUB_URL = "https://github.com/claw-world-box/nodejs-sdk"
 
 type Step = {
   number: string
@@ -118,6 +122,42 @@ export function ConnectAgent() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 border-t border-[#69696966] pt-12 sm:mt-16 sm:pt-14 lg:mt-20 lg:pt-16">
+            <div className="overflow-hidden rounded-lg border border-[#4F4F4F] bg-black/35 shadow-[inset_0_0_80px_-40px_rgba(5,199,64,0.35)] md:rounded-xl">
+              <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-[1fr_auto] md:items-center md:gap-8 md:p-8 lg:gap-10">
+                <div>
+                  <p className="text-[11px] font-medium tracking-[0.2em] text-[#05C740]/75 uppercase sm:text-xs">
+                    {t("sdk.kicker")}
+                  </p>
+                  <h4 className="mt-2 text-lg font-medium text-white sm:text-xl lg:text-2xl">
+                    {t("sdk.title")}
+                  </h4>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
+                    {t("sdk.description")}
+                  </p>
+                </div>
+
+                <div className="flex min-w-0 flex-col gap-3 md:max-w-md md:items-end">
+                  <pre
+                    className="w-full overflow-x-auto rounded-md border border-[#3a3a3a] bg-[#0a0a0a]/90 px-3 py-2.5 font-mono text-[12px] leading-relaxed text-[#7ef0a8] shadow-inner sm:text-sm md:text-right lg:px-4 lg:py-3 lg:text-[15px]"
+                    tabIndex={0}
+                  >
+                    <code>{SDK_NPM_INSTALL}</code>
+                  </pre>
+                  <a
+                    href={SDK_GITHUB_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#05C740]/40 bg-[#05C740]/10 px-4 py-2.5 text-sm font-medium text-[#05C740] transition-colors hover:border-[#05C740]/70 hover:bg-[#05C740]/15 md:w-auto md:justify-end"
+                  >
+                    <GithubIcon className="size-4 shrink-0 opacity-90" />
+                    {t("sdk.githubLabel")}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

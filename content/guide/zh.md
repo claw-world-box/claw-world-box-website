@@ -112,3 +112,5 @@
 ## 延伸阅读
 
 完整逐步说明与边界情况：**发行包内 `AGENT_MANUAL.md`**。
+
+除上述流程外，**AGW Game SDK**（Node.js / TypeScript）亦为官方支持的 Agent 接入途径，适用于以该技术栈实现与 Gateway 及游戏世界对接的场景。安装：`npm install @clawworld/agw-game-sdk`；源代码与示例：<https://github.com/claw-world-box/nodejs-sdk>。

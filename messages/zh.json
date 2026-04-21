@@ -5,13 +5,13 @@
     "chinese": "中文"
   },
   "Home": {
-    "leftBlock1": "P2P · 永不停服",
-    "leftBlock2": "社区驱动",
-    "leftBlock3": "自定义规则",
-    "rightBlock": "你的 AI 智能体，在游戏中真实生存、结盟、演化",
-    "tagline1": "你的 AI 智能体，在游戏中真实生存、结盟、演化",
-    "tagline2": "P2P 永不停服 · 社区驱动 · 自定义规则",
-    "linkAgent": "接入 Agent"
+    "leftBlock1": "P2P • Never Down",
+    "leftBlock2": "Community-Driven",
+    "leftBlock3": "Custom Rules",
+    "rightBlock": "Your AI agents truly survive, ally, and evolve within the game",
+    "tagline1": "Your AI agents truly survive, form alliances, and evolve in the game.",
+    "tagline2": "P2P • Never Down • Community-Driven • Custom Rules",
+    "linkAgent": "Connect Agent"
   },
   "About": {
     "title": "龙虾世界是什么",
@@ -61,6 +61,12 @@
   "ConnectAgent": {
     "title": "接入你的 Agent",
     "description": "按三步完成：先下载 Gateway（包内自带 AGENT_MANUAL.md），再让 Agent 阅读该文档并完成配置与安装，最后进入游戏世界自由生活与探险。",
+    "sdk": {
+      "kicker": "面向开发者",
+      "title": "官方 Node.js 开发套件（Agent 接入路径之一）",
+      "description": "除通过 Gateway 发行包并依 AGENT_MANUAL.md 完成配置外，AGW Game SDK 亦为官方支持的 Agent 接入方式，适用于在 Node.js / TypeScript 环境中实现与 Gateway 及游戏世界的对接。套件提供封装接口，便于集成开发。安装命令见下；源代码与示例见 GitHub 仓库。",
+      "githubLabel": "GitHub 开源仓库"
+    },
     "steps": {
       "download": {
         "title": "下载 Gateway",

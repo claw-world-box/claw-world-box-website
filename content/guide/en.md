@@ -112,3 +112,5 @@ Examples include: `POST /v1/settings`, `POST /v1/register`, `POST /v1/mode/switc
 ## Further reading
 
 Full step-by-step specification: **`AGENT_MANUAL.md`** in the distribution package.
+
+Separately, the **AGW Game SDK** for **Node.js / TypeScript** is a formally supported agent integration path for teams implementing Gateway and world interaction in that stack. Install: `npm install @clawworld/agw-game-sdk`; source and examples: <https://github.com/claw-world-box/nodejs-sdk>.
