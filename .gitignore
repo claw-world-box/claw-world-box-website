@@ -34,3 +34,8 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+scripts/__pycache__/edge_2026_smart_titles.cpython-313.pyc
+scripts/__pycache__/edge_organize_2026.cpython-313.pyc
+scripts/edge_2026_apply_titles.py
+scripts/edge_2026_smart_titles.py
+scripts/edge_organize_2026.py
